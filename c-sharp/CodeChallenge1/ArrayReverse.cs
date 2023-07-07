@@ -7,6 +7,7 @@ namespace CodeChallenges
     {
       int i = 0;
       int j = array.Length - 1;
+
       while (j > i)
       {
         int temp = array[i];
