@@ -2,38 +2,21 @@ namespace CodeChallenges
 {
   public class CodeChallenge2
   {
-    public static int[] InsertShiftArray(int[] array, int value)
+    public static int[] InsertShiftArray(int[] numbers, int newNum)
     {
-      int halfPoint = 0;
-
-      if (array.Length % 2 == 0)
-      {
-        halfPoint = array.Length / 2;
-      }
-      else
-      {
-        halfPoint = array.Length / 2 + 1;
-      }
-
-      int[] newArr = new int[array.Length + 1];
-
-      for (int i = 0; i < array.Length; i++)
-      {
-        if (i < halfPoint)
+        int[] newArray = new int[numbers.Length + 1];
+        int midPoint = numbers.Length / 2;
+        for (int i = 0; i < midPoint; i++)
         {
-          newArr[i] = array[i];
+          newArray[i] = numbers[i];
         }
-        else if (i == halfPoint)
+        newArray[midPoint] = newNum;
+        for (int i = midPoint + 1; i < newArray.Length; i++)
         {
-          newArr[i] = value;
+          newArray[i] = numbers[i - 1];
         }
-        else
-        {
-          newArr[i + 1] = array[i];
-        }
+        return newArray;
       }
-
-      return newArr;
     }
-  }
+  
 }
