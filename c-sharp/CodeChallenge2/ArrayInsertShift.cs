@@ -1,11 +1,30 @@
-namespace CodeChallenges 
+namespace CodeChallenges
 {
-    public class CodeChallenge2
+  public class CodeChallenge2
+  {
+    public static int[] InsertShiftArray(int[] array, int value)
     {
-        public static int[] InsertShiftArray(int[] array, int value)
+      int length = array.Length + 1;
+      int[] newArray = new int[length];
+      int midPoint = length / 2;
+
+      for (int i = 0; i < length; i++)
+      {
+        if (i == midPoint)
         {
-            //insert the value into the middle of the array
-            return array;
+          newArray[i] = value;
         }
+        else if (i < midPoint)
+        {
+          newArray[i] = array[i];
+        }
+        else
+        {
+          newArray[i] = array[i - 1];
+        }
+      }
+
+      return newArray;
     }
+  }
 }
