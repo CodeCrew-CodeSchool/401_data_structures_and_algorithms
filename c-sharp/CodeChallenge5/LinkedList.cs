@@ -2,18 +2,12 @@ namespace CodeChallenges
 {
     public class LinkedList
     {
+        // public Node Head {get; set;}
 
-        public void AddNewNode()
-        {
-            
-        }
     }
 
     public class Node
     {
-        public Node()
-        {
 
-        }
     }
 }
