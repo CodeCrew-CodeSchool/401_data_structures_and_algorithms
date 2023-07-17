@@ -2,10 +2,11 @@ namespace CodeChallenges
 {
   public class LinkedList
   {
-    public Node Head;
+    public Node Head { get; set; }
 
-    public void AddNewNode(Node node)
+    public void Insert(int value)
     {
+      Node node = new Node(value);
       if (Head != null)
       {
         node.Next = Head;
@@ -52,8 +53,9 @@ namespace CodeChallenges
 
   public class Node
   {
-    public Node Next;
-    public int Value;
+    public Node? Next { get; set; }
+    public int Value { get; set; }
+
     public Node(int value)
     {
       Value = value;
