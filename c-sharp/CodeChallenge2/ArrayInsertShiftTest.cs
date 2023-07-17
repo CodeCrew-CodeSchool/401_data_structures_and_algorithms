@@ -10,7 +10,7 @@ namespace CodeChallengeTests
     {
       int[] inputArray = { 1, 2, 3, 4, 5, 6, 7 };
       int inputValue = 9;
-      int[] expectedArray = { 1, 2, 3, 9, 7, 4, 5, 6 };
+      int[] expectedArray = { 1, 2, 3, 9, 4, 5, 6, 7 };
 
       int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
 
