@@ -4,7 +4,9 @@ namespace CodeChallenges
     {
         public static int GetNthNumberInFibonacciSequence(int nthNumberInSequence)
         {
-            return 0;
+            int result = 0;
+
+            return result;
         }
 
         public static int[] RowSums(int[][] matrix)
