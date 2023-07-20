@@ -31,7 +31,6 @@ namespace CodeChallenges
 
         current = current.Next;
       }
-
       return false;
     }
 
