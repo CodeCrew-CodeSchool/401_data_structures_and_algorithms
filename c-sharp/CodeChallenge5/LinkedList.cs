@@ -2,7 +2,7 @@ namespace CodeChallenges
 {
   public class LinkedList
   {
-    public Node Head { get; set; }
+    public Node? Head { get; set; }
 
     public void Insert(int value)
     {
@@ -21,7 +21,7 @@ namespace CodeChallenges
 
     public bool Includes(int value)
     {
-      Node current = Head;
+      Node? current = Head;
       while (current != null)
       {
         if (current.Value == value)
@@ -36,7 +36,7 @@ namespace CodeChallenges
 
     public override string ToString()
     {
-      Node current = Head;
+      Node? current = Head;
       string outputStr = "";
       while (current != null)
       {
