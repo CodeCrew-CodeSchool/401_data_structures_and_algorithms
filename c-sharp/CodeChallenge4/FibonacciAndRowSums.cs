@@ -1,19 +1,31 @@
-namespace CodeChallenges 
+namespace CodeChallenges
 {
-    public class CodeChallenge4
+  public class CodeChallenge4
+  {
+    public static int GetNthNumberInFibonacciSequence(int nthNumberInSequence)
     {
-        public static int GetNthNumberInFibonacciSequence(int nthNumberInSequence)
-        {
-            int result = 0;
+      if (nthNumberInSequence <= 0)
+      {
+        throw new ArgumentException("Invalid input. Nth number in sequence must be greater than zero.");
+      }
 
-            return result;
-        }
+      if (nthNumberInSequence == 1 || nthNumberInSequence == 2)
+      {
+        return 1;
+      }
 
-        public static int[] RowSums(int[][] matrix)
-        {
-            int[] rowSums = new int[matrix[0].Length];
-            return rowSums;
-        }
+      int previous = 1;
+      int current = 1;
+      int result = 0;
 
+      for (int i = 3; i <= nthNumberInSequence; i++)
+      {
+        result = previous + current;
+        previous = current;
+        current = result;
+      }
+
+      return result;
     }
+  }
 }

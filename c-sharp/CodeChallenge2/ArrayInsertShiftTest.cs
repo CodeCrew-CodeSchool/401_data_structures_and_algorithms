@@ -14,7 +14,7 @@ namespace CodeChallengeTests
 
       int[] result = CodeChallenge2.InsertShiftArray(inputArray, inputValue);
 
-      Assert.Equal(result, expectedArray);
+      Assert.Equal(expectedArray, result);
     }
     [Fact]
     public void InsertShiftArray_With_EvenNumber_Of_Elements()
