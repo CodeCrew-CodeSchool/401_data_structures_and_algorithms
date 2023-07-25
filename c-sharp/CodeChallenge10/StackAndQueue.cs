@@ -61,6 +61,55 @@ namespace CodeChallenges
 
   public class Queue
   {
+    Node Front { get; set; } = null;
 
+    public void Enqueue(int val)
+    {
+      Node newNode = new Node(val);
+
+      if(Front == null)
+      {
+        Front = newNode;
+        return;
+      }
+
+      Node current = Front;
+      while (current.Next != null)
+      {
+        current = current.Next;
+      }
+      current.Next = newNode;
+      
+    }
+
+    public int Dequeue()
+    {
+      if (Front == null)
+      {
+        throw new Exception("Stack is empty");
+      }
+
+      int result = Front.Value;
+      Front = Front.Next;
+      return result;
+    }
+
+    public int Peek()
+    {
+      if (Front == null)
+      {
+        throw new Exception("Stack is empty");
+      }
+      return Front.Value;
+    }
+
+    public bool IsEmpty()
+    {
+      if (Front == null)
+      {
+        return true;
+      }
+      return false;
+    }
   }
 }
