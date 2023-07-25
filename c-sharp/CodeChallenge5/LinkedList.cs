@@ -1,8 +1,10 @@
-namespace CodeChallenges 
+namespace CodeChallenges
 {
   public class LinkedList
   {
     public Node? Head { get; set; }
+    public Node? Tail { get; set; }
+    public int Length { get; set; }
 
     public void Insert(int value)
     {
@@ -10,13 +12,15 @@ namespace CodeChallenges
       if (Head != null)
       {
         node.Next = Head;
+        Head.Prev = node; 
         Head = node;
-
       }
       else
       {
         Head = node;
+        Tail = node;
       }
+      Length++;
     }
 
     public bool Includes(int value)
@@ -48,11 +52,13 @@ namespace CodeChallenges
       return outputStr;
     }
 
+
   }
 
   public class Node
   {
     public Node? Next { get; set; }
+    public Node? Prev { get; set; }
     public int Value { get; set; }
 
     public Node(int value)
@@ -60,4 +66,5 @@ namespace CodeChallenges
       Value = value;
     }
   }
+
 }

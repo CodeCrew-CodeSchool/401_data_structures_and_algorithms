@@ -2,8 +2,7 @@ namespace CodeChallenges
 {
   public class InsertableLinkedList : LinkedList
   {
-
-    //adds a new node with the given value to the end of the list
+    // Adds a new node with the given value to the end of the list
     public void Append(int value)
     {
       Node newNode = new Node(value);
@@ -11,18 +10,18 @@ namespace CodeChallenges
       if (Head == null)
       {
         Head = newNode;
+        Tail = newNode;
       }
       else
       {
-        Node current = Head;
-        while (current.Next != null)
-        {
-          current = current.Next;
-        }
-        current.Next = newNode;
+        Tail.Next = newNode;
+        newNode.Prev = Tail; // Set the previous node reference
+        Tail = newNode;
       }
+      Length++;
     }
-    //adds a new node with the given new value immediately before the first node that has the value specified
+
+    // Adds a new node with the given new value immediately before the first node that has the value specified
     public void InsertBefore(int value, int valueToInsert)
     {
       Node newNode = new Node(valueToInsert);
@@ -32,6 +31,7 @@ namespace CodeChallenges
         if (Head.Value == value)
         {
           newNode.Next = Head;
+          Head.Prev = newNode; // Set the previous node reference
           Head = newNode;
           return;
         }
@@ -42,15 +42,17 @@ namespace CodeChallenges
           if (current.Next.Value == value)
           {
             newNode.Next = current.Next;
+            newNode.Prev = current; // Set the previous node reference
             current.Next = newNode;
             break;
           }
           current = current.Next;
         }
       }
-
+      Length++;
     }
-    //adds a new node with the given new value immediately after the first node that has the value specified
+
+    // Adds a new node with the given new value immediately after the first node that has the value specified
     public void InsertAfter(int value, int valueToInsert)
     {
       Node newNode = new Node(valueToInsert);
@@ -63,14 +65,19 @@ namespace CodeChallenges
           if (current.Value == value)
           {
             newNode.Next = current.Next;
+            newNode.Prev = current; 
             current.Next = newNode;
+            if (current == Tail)
+            {
+              Tail = newNode;
+            }
             return;
           }
 
           current = current.Next;
         }
       }
+      Length++;
     }
-
   }
 }
