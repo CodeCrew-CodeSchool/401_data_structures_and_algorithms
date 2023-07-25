@@ -32,7 +32,6 @@ namespace CodeChallenges
         current2 = current2.Next;
       }
 
-
       return result;
 
     }
