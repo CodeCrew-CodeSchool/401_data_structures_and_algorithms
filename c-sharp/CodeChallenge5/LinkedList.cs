@@ -27,6 +27,7 @@ namespace CodeChallenges
     {
       bool foundValue = false;
 
+
       Node currentNode = Head;
       while (currentNode != null)
       {
@@ -38,6 +39,7 @@ namespace CodeChallenges
       }
 
       return foundValue;
+
     }
 
     public string ToString()
