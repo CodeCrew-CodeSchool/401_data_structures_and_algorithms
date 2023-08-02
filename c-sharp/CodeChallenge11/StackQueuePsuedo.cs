@@ -1,12 +1,12 @@
 using Xunit;
 namespace CodeChallenges
 {
-  public class PseudoQueue
+  public class StackQueuePsuedo
   {
     private Stack stack1;
     private Stack stack2;
 
-    public PseudoQueue()
+    public StackQueuePsuedo()
     {
       stack1 = new Stack();
       stack2 = new Stack();
