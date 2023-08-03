@@ -105,6 +105,7 @@ namespace CodeChallenges
 
     public bool IsEmpty()
     {
+
       if (Front == null)
       {
         return true;
