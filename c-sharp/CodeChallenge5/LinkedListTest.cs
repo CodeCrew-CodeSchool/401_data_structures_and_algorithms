@@ -1,6 +1,6 @@
 using CodeChallenges;
-using Xunit;
 using System.Reflection;
+using Xunit;
 namespace CodeChallengeTests
 {
   public class CodeChallenge5Test
@@ -28,14 +28,14 @@ namespace CodeChallengeTests
       LinkedList list = new LinkedList();
 
       int value = 5;
-      insertMethod.Invoke(list, new object[]{value});
+      insertMethod.Invoke(list, new object[] { value });
       PropertyInfo head = typeof(LinkedList).GetProperty("Head");
 
       Node headValue = (Node)head.GetValue(list);
 
       PropertyInfo ValueProperty = typeof(Node).GetProperty("Value");
-      
-      
+
+
       int result = (int)ValueProperty.GetValue(headValue);
 
       Assert.Equal(value, result);
@@ -49,8 +49,8 @@ namespace CodeChallengeTests
       LinkedList list = new LinkedList();
       int value = 5;
       int value2 = 6;
-      insertMethod.Invoke(list, new object[]{value});
-      insertMethod.Invoke(list, new object[]{value2});
+      insertMethod.Invoke(list, new object[] { value });
+      insertMethod.Invoke(list, new object[] { value2 });
 
       PropertyInfo head = typeof(LinkedList).GetProperty("Head");
 
@@ -58,9 +58,9 @@ namespace CodeChallengeTests
       Node headValue = (Node)head.GetValue(list);
 
       PropertyInfo ValueProperty = typeof(Node).GetProperty("Value");
-      
+
       int result1 = (int)ValueProperty.GetValue(headValue);
-      
+
       PropertyInfo NextProperty = typeof(Node).GetProperty("Next");
       Node headValue2 = (Node)NextProperty.GetValue(headValue);
 
@@ -77,27 +77,27 @@ namespace CodeChallengeTests
     {
       MethodInfo insertMethod = typeof(LinkedList).GetMethod("Insert");
       Assert.True(insertMethod != null);
-      
+
       LinkedList list = new LinkedList();
       int value1 = 5;
       int value2 = 6;
       int value3 = -1;
       int value4 = -2;
       int value5 = 0;
-      insertMethod.Invoke(list, new object[]{value1});
-      insertMethod.Invoke(list, new object[]{value2});
-      insertMethod.Invoke(list, new object[]{value3});
-      insertMethod.Invoke(list, new object[]{value4});
-      insertMethod.Invoke(list, new object[]{value5});
+      insertMethod.Invoke(list, new object[] { value1 });
+      insertMethod.Invoke(list, new object[] { value2 });
+      insertMethod.Invoke(list, new object[] { value3 });
+      insertMethod.Invoke(list, new object[] { value4 });
+      insertMethod.Invoke(list, new object[] { value5 });
 
       MethodInfo includesMethod = typeof(LinkedList).GetMethod("Includes");
       Assert.True(includesMethod != null);
 
-      bool result1 = (bool)includesMethod.Invoke(list, new object[]{value1});
-      bool result2 = (bool)includesMethod.Invoke(list, new object[]{value2});
-      bool result3 = (bool)includesMethod.Invoke(list, new object[]{value3});
-      bool result4 = (bool)includesMethod.Invoke(list, new object[]{value4});
-      bool result5 = (bool)includesMethod.Invoke(list, new object[]{value5});
+      bool result1 = (bool)includesMethod.Invoke(list, new object[] { value1 });
+      bool result2 = (bool)includesMethod.Invoke(list, new object[] { value2 });
+      bool result3 = (bool)includesMethod.Invoke(list, new object[] { value3 });
+      bool result4 = (bool)includesMethod.Invoke(list, new object[] { value4 });
+      bool result5 = (bool)includesMethod.Invoke(list, new object[] { value5 });
 
       Assert.True(result1);
       Assert.True(result2);
@@ -111,26 +111,26 @@ namespace CodeChallengeTests
     {
       MethodInfo insertMethod = typeof(LinkedList).GetMethod("Insert");
       Assert.True(insertMethod != null);
-      
+
       LinkedList list = new LinkedList();
       int value1 = 5;
       int value2 = 6;
       int value3 = -1;
       int value4 = -2;
       int value5 = 0;
-      insertMethod.Invoke(list, new object[]{value1});
-      insertMethod.Invoke(list, new object[]{value2});
-      insertMethod.Invoke(list, new object[]{value3});
-      insertMethod.Invoke(list, new object[]{value4});
-      insertMethod.Invoke(list, new object[]{value5});
+      insertMethod.Invoke(list, new object[] { value1 });
+      insertMethod.Invoke(list, new object[] { value2 });
+      insertMethod.Invoke(list, new object[] { value3 });
+      insertMethod.Invoke(list, new object[] { value4 });
+      insertMethod.Invoke(list, new object[] { value5 });
 
       MethodInfo includesMethod = typeof(LinkedList).GetMethod("Includes");
       Assert.True(includesMethod != null);
 
-      bool result1 = (bool)includesMethod.Invoke(list, new object[]{1122});
-      bool result2 = (bool)includesMethod.Invoke(list, new object[]{123213});
-      bool result3 = (bool)includesMethod.Invoke(list, new object[]{555});
-      bool result4 = (bool)includesMethod.Invoke(list, new object[]{666});
+      bool result1 = (bool)includesMethod.Invoke(list, new object[] { 1122 });
+      bool result2 = (bool)includesMethod.Invoke(list, new object[] { 123213 });
+      bool result3 = (bool)includesMethod.Invoke(list, new object[] { 555 });
+      bool result4 = (bool)includesMethod.Invoke(list, new object[] { 666 });
 
 
       Assert.False(result1);
@@ -148,14 +148,14 @@ namespace CodeChallengeTests
       LinkedList list = new LinkedList();
       int value1 = 5;
       int value2 = 6;
-      insertMethod.Invoke(list, new object[]{value1});
-      insertMethod.Invoke(list, new object[]{value2});
+      insertMethod.Invoke(list, new object[] { value1 });
+      insertMethod.Invoke(list, new object[] { value2 });
 
       MethodInfo toStringMethod = typeof(LinkedList).GetMethod("ToString");
       Assert.True(toStringMethod != null);
 
       string expectedString = "6 -> 5 -> NULL";
-      string result = (string)toStringMethod.Invoke(list, new object[]{});;
+      string result = (string)toStringMethod.Invoke(list, new object[] { }); ;
 
       Assert.Equal(expectedString, result);
     }
@@ -165,19 +165,19 @@ namespace CodeChallengeTests
     {
       MethodInfo insertMethod = typeof(LinkedList).GetMethod("Insert");
       Assert.True(insertMethod != null);
-      
+
       LinkedList list = new LinkedList();
-      insertMethod.Invoke(list, new object[]{-1});
-      insertMethod.Invoke(list, new object[]{99});
-      insertMethod.Invoke(list, new object[]{6});
-      insertMethod.Invoke(list, new object[]{12});
-      insertMethod.Invoke(list, new object[]{0});
+      insertMethod.Invoke(list, new object[] { -1 });
+      insertMethod.Invoke(list, new object[] { 99 });
+      insertMethod.Invoke(list, new object[] { 6 });
+      insertMethod.Invoke(list, new object[] { 12 });
+      insertMethod.Invoke(list, new object[] { 0 });
 
       MethodInfo toStringMethod = typeof(LinkedList).GetMethod("ToString");
       Assert.True(toStringMethod != null);
 
       string expectedString = "0 -> 12 -> 6 -> 99 -> -1 -> NULL";
-      string result = (string)toStringMethod.Invoke(list, new object[]{});
+      string result = (string)toStringMethod.Invoke(list, new object[] { });
 
       Assert.Equal(expectedString, result);
     }
@@ -193,7 +193,7 @@ namespace CodeChallengeTests
       Assert.True(toStringMethod != null);
 
       string expectedString = "NULL";
-      string result = (string)toStringMethod.Invoke(list, new object[]{});
+      string result = (string)toStringMethod.Invoke(list, new object[] { });
 
       Assert.Equal(expectedString, result);
     }

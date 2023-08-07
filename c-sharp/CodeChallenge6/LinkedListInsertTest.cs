@@ -1,6 +1,6 @@
 using CodeChallenges;
-using Xunit;
 using System.Reflection;
+using Xunit;
 
 namespace CodeChallengeTests
 {
@@ -68,7 +68,7 @@ namespace CodeChallengeTests
 
       int valueToInsert = 10;
       int valueToInsertBefore = -1;
-      insertBeforeMethod.Invoke(list, new object[] {valueToInsertBefore, valueToInsert });
+      insertBeforeMethod.Invoke(list, new object[] { valueToInsertBefore, valueToInsert });
       PropertyInfo head = typeof(InsertableLinkedList).GetProperty("Head");
 
       Node headValue = (Node)head.GetValue(list);
@@ -95,7 +95,7 @@ namespace CodeChallengeTests
 
       int valueToInsert = 10;
       int valueToInsertBefore = 99;
-      insertBeforeMethod.Invoke(list, new object[] {valueToInsertBefore, valueToInsert });
+      insertBeforeMethod.Invoke(list, new object[] { valueToInsertBefore, valueToInsert });
       PropertyInfo head = typeof(InsertableLinkedList).GetProperty("Head");
 
       Node headValue = (Node)head.GetValue(list);
@@ -122,7 +122,7 @@ namespace CodeChallengeTests
 
       int valueToInsert = 10;
       int valueToInsertAfter = -1;
-      insertBeforeMethod.Invoke(list, new object[] {valueToInsertAfter, valueToInsert });
+      insertBeforeMethod.Invoke(list, new object[] { valueToInsertAfter, valueToInsert });
       PropertyInfo head = typeof(InsertableLinkedList).GetProperty("Head");
 
       Node headValue = (Node)head.GetValue(list);
