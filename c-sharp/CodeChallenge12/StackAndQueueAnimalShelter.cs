@@ -7,7 +7,7 @@ namespace CodeChallenges
     }
 
 
-    public class StackAndQueueAnimalShelter
+    public class AnimalShelter
     {
         public void Enqueue(Animal animal)
         {

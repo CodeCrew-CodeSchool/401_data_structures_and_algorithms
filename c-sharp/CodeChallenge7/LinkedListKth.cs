@@ -2,9 +2,9 @@ namespace CodeChallenges
 {
     public class LinkedListKth: InsertableLinkedList
     {
-        public void KthFromEnd(int kthFromEnd)
+        public int KthFromEnd(int kthFromEnd)
         {
-            
+            return 0;
         }
     }
 }

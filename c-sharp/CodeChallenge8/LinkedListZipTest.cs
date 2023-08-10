@@ -65,15 +65,19 @@ namespace CodeChallengeTests
     [Fact]
     public void LinkedList_ZipLists_Second_List_Longer()
     {
+      MethodInfo insertMethod = typeof(LinkedListKth).GetMethod("Insert");
+
       LinkedListKth list1 = new LinkedListKth();
-      list1.Insert(2);
-      list1.Insert(1);
+      insertMethod.Invoke(list1, new object[] { 2 });
+      insertMethod.Invoke(list1, new object[] { 1 });
+
 
       LinkedListKth list2 = new LinkedListKth();
-      list2.Insert(40);
-      list2.Insert(30);
-      list2.Insert(20);
-      list2.Insert(10);
+      insertMethod.Invoke(list1, new object[] { 40 });
+      insertMethod.Invoke(list1, new object[] { 30 });
+      insertMethod.Invoke(list1, new object[] { 20 });
+      insertMethod.Invoke(list1, new object[] { 10 });
+
 
       LinkedListKth result = CodeChallenge8.ZipLists(list1, list2);
 

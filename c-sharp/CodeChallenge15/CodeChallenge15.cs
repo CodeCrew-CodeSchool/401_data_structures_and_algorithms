@@ -13,7 +13,7 @@ namespace CodeChallenges
         public int[] PreOrderSearch()
         {
             // LinkList<int> values = new L
-
+return new int[2];
 
         }
     }

@@ -1,7 +1,7 @@
 using CodeChallenges;
 using Xunit;
 
-namespace CodeChallenge15Tests
+namespace CodeChallengeTests
 {
   public class CodeChallenge15Test
   {
