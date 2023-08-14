@@ -48,6 +48,7 @@ namespace CodeChallenges
             validator.Pop();
           }
 
+
           else
           {
             return false;
@@ -56,7 +57,7 @@ namespace CodeChallenges
 
       }
 
-      if(validator.Count == 0)
+      if (validator.Count == 0)
       {
         return true;
       }
