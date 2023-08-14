@@ -235,5 +235,5 @@ $RECYCLE.BIN/
 .vscode
 c-sharp/CodeChallenge4/FibonacciAndRowSums.cs
 c-sharp/CodeChallenge6/LinkedListInsert.cs
-
+*.dib
 /c-sharp/CodeChallenge5/LinkedList.cs
