@@ -21,8 +21,7 @@ namespace CodeChallenges
       
       if(Top != null)
       {
-        Top.Next = newNode;
-        Top = newNode;
+        newNode.Next = Top;
       }
       Top = newNode;
     }
