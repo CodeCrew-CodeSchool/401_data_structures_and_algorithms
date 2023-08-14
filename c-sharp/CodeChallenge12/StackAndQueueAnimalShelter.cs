@@ -1,22 +1,51 @@
-namespace CodeChallenges 
+namespace CodeChallenges
 {
 
-    public class Animal
+  public class Animal
+  {
+    public string Species { get; set; }
+    public string Name { get; set; }
+
+    public Animal(string species, string name)
     {
-        
+      Species = species;
+      Name = name;
+    }
+  }
+
+
+  public class AnimalShelter
+  {
+    public Queue<Animal> AnimalQueue = new();
+
+    public void Enqueue(Animal animal)
+    {
+      AnimalQueue.Enqueue(animal);
     }
 
-
-    public class StackAndQueueAnimalShelter
+    public Animal Dequeue(string pref)
     {
-        public void Enqueue(Animal animal)
+      if(pref != "dog" && pref !="cat")
+      {
+        return null;
+      }
+      try
+      {
+
+      Animal next = AnimalQueue.First(a => pref == a.Species);
+        if (next != null)
         {
-            
+          AnimalQueue = new Queue<Animal>(AnimalQueue.Where(a => a != next));
         }
 
-        // public Animal Dequeue(string pref)
-        // {
-            
-        // }
+        return next;
+      }
+      catch (Exception)
+      {
+        return null;
+      }
+
+
     }
+  }
 }
