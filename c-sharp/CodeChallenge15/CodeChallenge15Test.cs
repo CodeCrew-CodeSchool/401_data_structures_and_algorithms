@@ -114,5 +114,84 @@ namespace CodeChallengeTests
       Assert.Equal(expectedResult, result);
     }
 
+    [Fact]
+    public void InOrderSearch_SingleNodeTree_Test()
+    {
+      BinaryTree tree = (BinaryTree)BinaryTreeConstructorMethod.Invoke(null);
+      Node rootNode = (Node)NodeConstructorMethod.Invoke(new object[] { 42 });
+      BinaryTreeRootProperty.SetValue(tree, rootNode);
+
+      LinkedList<int> result = (LinkedList<int>)typeof(BinaryTree)
+          .GetMethod("InOrderSearch")
+          .Invoke(tree, null);
+
+      Assert.Single(result);
+      Assert.Equal(42, result.First.Value);
+    }
+
+    [Fact]
+    public void InOrderSearch_LargeTree_Test()
+    {
+      // Create a large binary tree for testing
+      BinaryTree tree = (BinaryTree)BinaryTreeConstructorMethod.Invoke(null);
+      Node rootNode = (Node)NodeConstructorMethod.Invoke(new object[] { 1 });
+      BinaryTreeRootProperty.SetValue(tree, rootNode);
+
+      Node currentNode = rootNode;
+      for (int i = 2; i <= 6; i += 2)
+      {
+        LeftNodeProperty.SetValue(currentNode, (Node)NodeConstructorMethod.Invoke(new object[] { i }));
+        RightNodeProperty.SetValue(currentNode, (Node)NodeConstructorMethod.Invoke(new object[] { i + 1 }));
+        currentNode = (Node)LeftNodeProperty.GetValue(currentNode);
+      }
+
+      LinkedList<int> result = (LinkedList<int>)typeof(BinaryTree)
+          .GetMethod("InOrderSearch")
+          .Invoke(tree, null);
+
+      LinkedList<int> expectedResult = new LinkedList<int>(new[] { 6, 4, 7, 2, 5, 1, 3 });
+      Assert.Equal(expectedResult, result);
+    }
+
+    [Fact]
+    public void PostOrderSearch_SingleNodeTree_Test()
+    {
+      BinaryTree tree = (BinaryTree)BinaryTreeConstructorMethod.Invoke(null);
+      Node rootNode = (Node)NodeConstructorMethod.Invoke(new object[] { 42 });
+      BinaryTreeRootProperty.SetValue(tree, rootNode);
+
+      LinkedList<int> result = (LinkedList<int>)typeof(BinaryTree)
+          .GetMethod("PostOrderSearch")
+          .Invoke(tree, null);
+
+      Assert.Single(result);
+      Assert.Equal(42, result.First.Value);
+    }
+
+    [Fact]
+    public void PostOrderSearch_LargeTree_Test()
+    {
+      // Create a large binary tree for testing
+      BinaryTree tree = (BinaryTree)BinaryTreeConstructorMethod.Invoke(null);
+      Node rootNode = (Node)NodeConstructorMethod.Invoke(new object[] { 1 });
+      BinaryTreeRootProperty.SetValue(tree, rootNode);
+
+      Node currentNode = rootNode;
+      for (int i = 2; i <= 6; i += 2)
+      {
+        LeftNodeProperty.SetValue(currentNode, (Node)NodeConstructorMethod.Invoke(new object[] { i }));
+        RightNodeProperty.SetValue(currentNode, (Node)NodeConstructorMethod.Invoke(new object[] { i + 1 }));
+        currentNode = (Node)LeftNodeProperty.GetValue(currentNode);
+      }
+
+      LinkedList<int> result = (LinkedList<int>)typeof(BinaryTree)
+          .GetMethod("PostOrderSearch")
+          .Invoke(tree, null);
+
+      LinkedList<int> expectedResult = new LinkedList<int>(new[] { 6, 7, 4, 5, 2, 3, 1 });
+      Assert.Equal(expectedResult, result);
+    }
+
+
   }
 }
