@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge14", "CodeChal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge15", "CodeChallenge15\CodeChallenge15.csproj", "{865D52DC-A54A-472D-9214-4352E817B644}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeChallenge16", "CodeChallenge16\CodeChallenge16.csproj", "{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,5 +228,17 @@ Global
 		{865D52DC-A54A-472D-9214-4352E817B644}.Release|x64.Build.0 = Release|Any CPU
 		{865D52DC-A54A-472D-9214-4352E817B644}.Release|x86.ActiveCfg = Release|Any CPU
 		{865D52DC-A54A-472D-9214-4352E817B644}.Release|x86.Build.0 = Release|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Debug|x64.Build.0 = Debug|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Debug|x86.Build.0 = Debug|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Release|x64.ActiveCfg = Release|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Release|x64.Build.0 = Release|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Release|x86.ActiveCfg = Release|Any CPU
+		{5891FF3B-CCCE-456F-B6E8-0EE9EACFAB57}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
